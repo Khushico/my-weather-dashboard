@@ -1,0 +1,249 @@
+:root {
+    --card-bg: #d2e9ff;
+    --card-text: #000;
+  }
+  
+  .dark {
+    --card-bg: #2a2a2a;
+    --card-text: #fff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .app-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+  }
+  
+  .theme-toggle {
+    background-color: #ffffff33;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #ffffff55;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    width: 300px;
+    max-width: 90%;
+  }
+  
+  input::placeholder {
+    color: #444;
+  }
+  
+  .light input {
+    color: black;
+  }
+  
+  .light input::placeholder {
+    color: #555;
+  }
+  
+  .dark input {
+    color: white;
+    background-color: #333;
+  }
+  
+  .dark input::placeholder {
+    color: #aaa;
+  }
+  
+  .form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .inline-buttons {
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .form-buttons button,
+  .inline-buttons button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .inline-buttons button {
+    width: auto;
+  }
+  
+  button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  button[type="button"] {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #45a049;
+  }
+  
+  .loader {
+    border: 4px solid #3498db;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .weather-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px 60px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 2rem;
+  }
+  
+  .light .weather-card {
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .forecast {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--card-text);
+  }
+  
+  .forecast h3 {
+    margin-bottom: 1rem;
+    color: var(--card-text);
+  }
+  
+  .forecast-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+  
+  .forecast-card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 140px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .forecast-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .forecast-card img {
+    margin: 0.5rem auto;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .history-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .history-buttons button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #ffffffaa;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    color: black;
+  }
+  
+  .dark .history-buttons button {
+    background-color: #444;
+    color: white;
+  }
+  
+  .history-buttons button:hover {
+    background-color: #ffffffcc;
+  }
+  
+      
+    
+  
+  
